@@ -3,94 +3,178 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
     <meta
       name="description"
-      content="High-performance HTML based website template."
+      content="Solstice - A modern landing page built with Bootstrap and Supabase."
     />
+    <meta name="theme-color" content="#667eea" />
+    <title>Solstice - Landing Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./dist/css/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   </head>
   <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
+    <!-- Main Content -->
+    <main>
+      <!-- Contact Section -->
+      <section id="contact" class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mx-auto">
+              <h2 class="display-6 fw-bold mb-4 text-center">Contact Us</h2>
+
+              <form id="contactForm">
+                <!-- Full Name -->
+                <div class="mb-3">
+                  <label for="fullName" class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullName"
+                    required
+                  />
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                  />
+                </div>
+
+                <!-- Inquiry Type -->
+                <div class="mb-3">
+                  <label for="inquiryType" class="form-label">Type of Inquiry</label>
+                  <select class="form-select" id="inquiryType" required>
+                    <option value="">-- Select --</option>
+                    <option value="general">General</option>
+                    <option value="support">Support</option>
+                    <option value="business">Business</option>
+                  </select>
+                </div>
+
+                <!-- Message -->
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="button" id="submitBtn" class="btn btn-primary w-100">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+      <div class="container">
+        <p class="mb-2">&copy; 2026 Solstice. All rights reserved.</p>
+        <p class="text-muted mb-0">
+          Built with ❤️ using HTML, Sass, Bootstrap, and Supabase
+        </p>
+      </div>
+    </footer>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./config.js"></script>
+
+   <script>
+    const SUPABASE_URL = SUPABASE_CONFIG.url;
+    const SUPABASE_KEY = SUPABASE_CONFIG.key;
+
+    const submitBtn = document.getElementById('submitBtn');
+
+    submitBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const inquiryType = document.getElementById('inquiryType').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!fullName || !email || !inquiryType || !message) {
+        await Swal.fire({
+          icon: 'warning',
+          title: 'Missing Fields',
+          text: 'Please fill in all required fields before submitting.',
+          confirmButtonColor: '#667eea'
+        });
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        await Swal.fire({
+          icon: 'warning',
+          title: 'Invalid Email',
+          text: 'Please enter a valid email address.',
+          confirmButtonColor: '#667eea'
+        });
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_submissions`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_KEY,
+            'Authorization': `Bearer ${SUPABASE_KEY}`,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({
+            full_name: fullName,
+            email: email,
+            inquiry_type: inquiryType,
+            message: message,
+          })
+        });
+        if (!response.ok) {
+          const errBody = await response.json();
+          const serverMessage = errBody?.message || errBody?.error || `Server error (HTTP ${response.status})`;
+          throw new Error(serverMessage);
+        }
+
+        await Swal.fire({
+          icon: 'success',
+          title: 'Message Sent!',
+          text: 'Thanks for reaching out. We\'ll get back to you soon.',
+          confirmButtonColor: '#667eea'
+        });
+
+        document.getElementById('contactForm').reset();
+
+      } catch (error) {
+        await Swal.fire({
+          icon: 'error',
+          title: 'Submission Failed',
+          text: error.message || 'Something went wrong. Please try again later.',
+          confirmButtonColor: '#667eea'
+        });
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  </script>
   </body>
 </html>

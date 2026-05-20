@@ -1,0 +1,130 @@
+// ============================================
+// MAIN SCSS FILE - Solstice Landing Page
+// ============================================
+
+// 1. Bootstrap Configuration & Customization
+// ============================================
+
+// Override Bootstrap's default variables here (before importing Bootstrap)
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #17a2b8;
+$light: #f8f9fa;
+$dark: #343a40;
+
+// Font customization
+$font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+
+// 2. Import Bootstrap
+// ============================================
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+// 3. Custom Styles
+// ============================================
+
+// Root styles
+:root {
+  --primary-color: #{$primary};
+  --secondary-color: #{$secondary};
+}
+
+body {
+  line-height: 1.6;
+  color: $dark;
+}
+
+// Header/Navigation
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  nav {
+    padding: 1rem 0;
+  }
+}
+
+// Hero Section
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 6rem 0;
+  text-align: center;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+}
+
+// Main Content
+main {
+  padding: 2rem 0;
+}
+
+section {
+  padding: 3rem 0;
+  
+  &:nth-child(even) {
+    background-color: $light;
+  }
+}
+
+// Footer
+footer {
+  background-color: $dark;
+  color: white;
+  padding: 2rem 0;
+  margin-top: 3rem;
+
+  a {
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Utility Classes
+// ============================================
+
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 0;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}

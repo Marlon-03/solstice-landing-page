@@ -1,0 +1,30 @@
+# Configuration
+.env
+.env.local
+.env.*.local
+config.js
+
+# Node modules
+node_modules/
+
+# Dependencies
+package-lock.json
+yarn.lock
+
+# Build output
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log
+yarn-error.log
