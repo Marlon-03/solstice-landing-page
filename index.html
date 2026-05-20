@@ -10,25 +10,23 @@
     <meta name="theme-color" content="#667eea" />
     <title>Solstice - Landing Page</title>
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
+    <!-- STYLES -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./dist/css/main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+
+    <!-- LIBRARIES -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   </head>
   <body>
     <!-- Main Content -->
     <main>
-      <section id="hero" class="w-100">
+      <section id="hero" class="w-100 m-0">
         <div class="container-fluid">
 
           <div class="row align-items-center">
-            <div class="col-lg-4 p-0">
-
+            <div class="col-lg-4 d-flex flex-column p-0">
               <div 
                 class="hero-image-bg"
                 style="background-image: url('./src/assets/images/hero-img-1.png');"
@@ -40,6 +38,7 @@
                 </div>
 
               </div>
+
               <img 
                 src="./src/assets/images/hero-img-2.png" 
                 alt="Hero Image 2" 
@@ -48,7 +47,6 @@
 
             </div>
 
-            <!-- RIGHT SIDE -->
             <div class="col-lg-8 p-0">
               <img 
                 src="./src/assets/images/hero-img-3.png" 
@@ -58,7 +56,6 @@
             </div>
 
           </div>
-
         </div>
       </section>
 
@@ -78,7 +75,6 @@
 
           <div class="row g-4">
 
-            <!-- CARD 1 -->
             <div class="col-lg-4 col-md-6" >
               <div class="collection-card h-100">
 
@@ -94,7 +90,7 @@
 
                   <p>
                     1,832-3,215 Sq. Ft.   |   2-4 Beds   |   2.5-3.5 Baths
-The ease of ranch-style living is elegantly imagined in these new offerings from the Horizon Collection by Shea Homes at Solstice. The designs range from 1,832 to 3,215 square feet, with gracious kitchens opening onto casual dining areas, and optional covered patios providing additional entertaining space outdoors.
+                    The ease of ranch-style living is elegantly imagined in these new offerings from the Horizon Collection by Shea Homes at Solstice. The designs range from 1,832 to 3,215 square feet, with gracious kitchens opening onto casual dining areas, and optional covered patios providing additional entertaining space outdoors.
 
                   </p>
                 </div>
@@ -102,7 +98,6 @@ The ease of ranch-style living is elegantly imagined in these new offerings from
               </div>
             </div>
 
-            <!-- CARD 2 -->
             <div class="col-lg-4 col-md-6">
               <div class="collection-card h-100">
 
@@ -118,14 +113,13 @@ The ease of ranch-style living is elegantly imagined in these new offerings from
 
                   <p>
                    2,369–4,022 Sq. Ft.   |   2-4 Beds   |   2.5-4.5 Baths
-These open-concept ranch home designs seamlessly flow from room to room and from inside to out. The Reflection Collection from Shea Homes at Solstice offers six new floorplans from 2,369–4,022 square feet, with airy spaciousness and natural light at nearly every turn.
+                  These open-concept ranch home designs seamlessly flow from room to room and from inside to out. The Reflection Collection from Shea Homes at Solstice offers six new floorplans from 2,369–4,022 square feet, with airy spaciousness and natural light at nearly every turn.
                   </p>
                 </div>
 
               </div>
             </div>
 
-            <!-- CARD 3 -->
             <div class="col-lg-4 col-md-6">
               <div class="collection-card h-100">
 
@@ -153,6 +147,7 @@ These open-concept ranch home designs seamlessly flow from room to room and from
         </div>
       </section>
 
+      <!-- VIDEO SECTION -->
       <section class="video-section w-100">
         <img
           src="./src/assets/images/CTV Video.png"
@@ -161,13 +156,14 @@ These open-concept ranch home designs seamlessly flow from room to room and from
         />
       </section>
 
+      <!-- BROCHURE SECTION -->
        <section class="section-padding bg-white">
         <div class="container">
 
           <div class="section-title mb-5 text-center ">
             <h3>HOME SWEET HIGH LINE</h3>
             <p class="mt-3">
-              Perfectly situated near the southernmost point of the High Line Canal, Solstice is a boutique community from Shea Homes®,  rooted in nature, home, and family. 
+              Perfectly situated near the southernmost point of the High Line Canal, Solstice is a boutique community from Shea Homes®, rooted in nature, home, and family. 
             </p>
 
             <button class="custom-btn">
@@ -177,7 +173,7 @@ These open-concept ranch home designs seamlessly flow from room to room and from
         </div>
       </section>
 
-      <!-- Contact Section -->
+      <!-- CONTACT SECTION -->
       <section id="contact" class="bg-white">
         <div class="container">
           <div class="row align-items-center">
@@ -233,7 +229,7 @@ These open-concept ranch home designs seamlessly flow from room to room and from
 
                   <div class="mb-4">
                     <label for="message" class="form-label fw-semibold">Message</label>
-                    <textarea class="form-control form-control-lg" id="message" rows="5" required></textarea>
+                    <textarea class="form-control form-control-lg" id="message" rows="5" placeholder="Type your message here" required></textarea>
                   </div>
 
                   <div class="d-grid gap-2">
@@ -248,10 +244,11 @@ These open-concept ranch home designs seamlessly flow from room to room and from
         </div>
       </section>
 
+      <!-- GALLERY SECTION -->
       <section class="gallery-section w-100">
         <div class="container">
 
-          <div class="row gallery">
+          <div class="row gallery p-0 m-0">
 
             <div class="col-md-3 p-0">
               <img
@@ -300,7 +297,7 @@ These open-concept ranch home designs seamlessly flow from room to room and from
       >
       
       <h5>
-         This is not an offer for real estate for sale, nor solicitation of an offer to buy to residents of any state or province in which registration and other legal requirements have not been fulfilled. Pricing does not include options, elevation, or lot premiums, effective date of publication and subject to change without notice. All square footages and measurements are approximate and subject to change without notice. Features and plans subject to change without notice. Views not guaranteed and may change over time. Floor plans, maps and renderings are artist's conception based on preliminary information, not to scale and subject to change. Home pictured may not be actual home for sale or actual model home, but rather a representation of a similar model or elevation design. Models are not an indication of racial preference. Trademarks are property of their respective owners. Equal Housing Opportunity. Copyright ©2026, Shea Homes. All rights reserved. Powered by Milesbrand.  
+         This is not an offer for real estate for sale, nor solicitation of an offer to buy to residents of any state or province in which registration and other legal requirements have not been fulfilled. Pricing does not include options, elevation, or lot premiums, effective date of publication and subject to change without notice. All square footages and measurements are approximate and subject to change without notice. Features and plans subject to change without notice. Views not guaranteed and may change over time. Floor plans, maps and renderings are artist's conception based on preliminary information, not to scale and subject to change. Home pictured may not be actual home for sale or actual model home, but rather a representation of a similar model or elevation design. Models are not an indication of racial preference. Trademarks are property of their respective owners. Equal Housing Opportunity. Copyright ©2026, Shea Homes. All rights reserved. Powered by Milesbrand.
       </h5>
 
       <h5>
